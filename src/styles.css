@@ -1,0 +1,109 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+  --primary-red-color: #a93a44; 
+  --secondary-red-color: #ffe8ee;    
+  --background-light-grey: #dedede;  
+  --background-dark-grey: #aaaaaa;
+  --background-dark-blue:#1b5875;
+  --background-light-blue:#2988b5;
+  --border-color: #ccc;
+  --font-family: 'Gill Sans', sans-serif;
+  --font-color-grey:#555555;
+}
+
+body {
+  font-family: var(--font-family);
+}
+
+.cmw-main-container {
+  width: 100%;
+  min-height: 650px;
+  background-color: var(--background-light-grey);
+  padding-bottom: 10px;
+}
+
+.cmw-title {
+  width: 100%;
+  height: 40px;
+  background-color: var(--background-light-blue);
+  color: white;
+  text-align: center;
+  font-size: 25px;
+  padding-top: 10px;
+}
+
+.cmw-title-top {
+  width: 100%;
+  height: 35px;
+  background-color: var(--background-light-grey);
+}
+
+.cmw-form {
+  width: 500px;
+  margin: 20px auto;
+  background-color: white;
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  display: flex; 
+  flex-direction: column; 
+}
+
+button {
+  width: 100px;
+  background-color: var(--background-dark-blue);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+label {
+  color: var(--font-color-grey);
+  margin-bottom: 6px;
+  margin-top: 8px;
+}
+
+.cmw-font-bold {
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"],
+select {
+  padding: 10px;
+  margin-bottom: 8px;
+  border: 1px solid var(--border-color);
+}
+
+input[type="checkbox"] {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+.cmw-separator {
+  height: 2px;
+  background-color: var(--border-color);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+input.ng-invalid.ng-touched, select.ng-invalid.ng-touched {
+  border: 2px solid var(--primary-red-color);
+  background-color: var(--secondary-red-color);
+}
+
+label:has(+ input.ng-invalid.ng-touched), label:has(+ select.ng-invalid.ng-touched) {
+  color: var(--primary-red-color);
+}
+
+.cmw-validation-msg{
+  color: var(--primary-red-color);
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: small;
+}

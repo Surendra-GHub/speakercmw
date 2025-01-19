@@ -1,0 +1,13 @@
+<div class="cmw-main-container">
+  <div class="cmw-title-top"></div>
+  <div class="cmw-title">{{ title }}</div>
+  <form class="cmw-form" [formGroup]="loginForm" (ngSubmit)="login()">
+    <label
+      >Please enter the case sensitive password from your official
+      invitation.</label
+    >
+    <label for="password" class="cmw-font-bold">Password:</label>
+    <input type="password" id="password" name="password" formControlName="password" />
+    <button type="submit">Login</button>
+  </form>
+</div>

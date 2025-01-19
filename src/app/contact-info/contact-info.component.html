@@ -1,0 +1,105 @@
+<div class="cmw-main-container">
+  <div class="cmw-title-top"></div>
+  <div class="cmw-title">{{ title }}</div>
+  <form class="cmw-form" [formGroup]="contactForm" (ngSubmit)="formSubmit()">
+    <label>Please fill in the following required information.</label>
+    <label for="firstName" class="cmw-font-bold">First Name: *</label>
+    <input
+      type="text"
+      id="firstName"
+      name="firstName"
+      formControlName="firstName"
+    />
+    <div
+      class="cmw-validation-msg"
+      *ngIf="
+        contactForm.get('firstName').invalid &&
+        contactForm.get('firstName').touched
+      "
+    >
+      &#x26A0; First Name is required
+    </div>
+    <label for="lastName" class="cmw-font-bold">Last Name: *</label>
+    <input
+      type="text"
+      id="lastName"
+      name="lastName"
+      formControlName="lastName"
+    />
+    <div
+      class="cmw-validation-msg"
+      *ngIf="
+        contactForm.get('lastName').invalid &&
+        contactForm.get('lastName').touched
+      "
+    >
+      &#x26A0; Last Name is required
+    </div>
+    <label for="state" class="cmw-font-bold">State: *</label>
+    <select id="state" name="state" formControlName="state">
+      <option value="">-- Select State --</option>
+      <option *ngFor="let state of states" [value]="state.value">
+        {{ state.label }}
+      </option>
+    </select>
+    <div
+      class="cmw-validation-msg"
+      *ngIf="
+        contactForm.get('state').invalid &&
+        contactForm.get('state').touched
+      "
+    >
+      &#x26A0; State is required
+    </div>
+    <div class="cmw-separator"></div>
+    <label
+      >Please provide your email address.<br />
+      All meeting correspondence will be sent via email.</label
+    >
+    <label for="email" class="cmw-font-bold">Email: *</label>
+    <input type="text" id="email" name="email" formControlName="email" />
+    <div
+      class="cmw-validation-msg"
+      *ngIf="
+        contactForm.get('email').invalid &&
+        contactForm.get('email').touched
+      "
+    >
+      &#x26A0; Email is required
+    </div>
+    <label for="confirmEmail" class="cmw-font-bold">Confirm Email: *</label>
+    <input
+      type="text"
+      id="confirmEmail"
+      name="confirmEmail"
+      formControlName="confirmEmail"
+    />
+    <div
+      class="cmw-validation-msg"
+      *ngIf="
+        contactForm.get('confirmEmail').invalid &&
+        contactForm.get('confirmEmail').touched
+      "
+    >
+      &#x26A0; Confirm Email is required
+    </div>
+    <div
+      class="cmw-validation-msg"
+      *ngIf="
+        !matchEmails()
+      "
+    >
+      &#x26A0; Email and Confirm Email should be same
+    </div>
+    <div class="cmw-checkbox">
+      <input
+        type="checkbox"
+        id="subscribe"
+        name="subscribe"
+        formControlName="subscribe"
+      />
+      <label for="subscribe"> Subscribe to Newsletter</label>
+    </div>
+    <button type="submit">Continue</button>
+  </form>
+</div>

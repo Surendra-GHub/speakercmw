@@ -1,0 +1,8 @@
+/* Mobile friendly CSS */
+
+@media (max-width: 767px) { 
+  
+  .cmw-form {
+    width: 320px;
+  }
+}

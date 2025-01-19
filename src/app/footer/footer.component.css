@@ -1,0 +1,9 @@
+.cmw-footer{
+    width:100%;
+    height: 40px;
+    background-color: var(--background-dark-grey);
+    color: var(--font-color-grey);
+    text-align: center;
+    padding-top: 18px;
+    font-size: 15px;
+}
