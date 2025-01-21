@@ -18,7 +18,7 @@ body {
 
 .cmw-main-container {
   width: 100%;
-  min-height: 650px;
+  min-height: 500px;
   background-color: var(--background-light-grey);
   padding-bottom: 10px;
 }
@@ -106,4 +106,87 @@ label:has(+ input.ng-invalid.ng-touched), label:has(+ select.ng-invalid.ng-touch
   font-weight: bold;
   margin-bottom: 8px;
   font-size: small;
+}
+
+/* Stepper Progress Bar*/
+.stepper-wrapper {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  width:50%;
+  left:25%;
+  position: relative;
+}
+
+.stepper-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+}
+
+.stepper-item::before {
+  position: absolute;
+  content: "";
+  border-bottom: 2px solid white;
+  width: 100%;
+  top: 40px;
+  left: -50%;
+  z-index: 2;
+}
+
+.stepper-item::after {
+  position: absolute;
+  content: "";
+  border-bottom: 2px solid white;
+  width: 100%;
+  top: 40px;
+  left: 50%;
+  z-index: 2;
+}
+
+.stepper-item.completed::after {
+  /*position: absolute;
+    content: "";*/
+  border-bottom: 2px solid var(--background-dark-blue);
+  /*width: 100%;
+    top: 40px;
+    left: 50%;*/
+  z-index: 3;
+}
+
+.stepper-item .step-counter {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: white;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.stepper-item.completed .step-counter,
+.stepper-item.active .step-counter {
+  background-color: var(--background-dark-blue);
+  color: white;
+}
+
+.stepper-item .step-name {
+  color: var(--background-dark-blue);
+}
+
+.stepper-item:first-child::before {
+  content: none;
+}
+.stepper-item:last-child::after {
+  content: none;
 }

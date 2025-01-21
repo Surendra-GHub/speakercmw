@@ -42,7 +42,7 @@ export class ContactInfoComponent implements OnInit, OnDestroy {
   }
 
   formSubmit() {
-    if (this.contactForm.invalid) {
+    if (this.contactForm.invalid || !this.matchEmails()) {
       alert(
         'Form has some invalid information. Please verify and submit again'
       );
